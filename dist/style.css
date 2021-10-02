@@ -39,10 +39,17 @@ h3 {
   font-size: 1.4rem;
 }
 
+.copyright {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 60%;
+  min-width: 20rem;
+}
+
 #notation {
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
   overflow-y: hidden;
 }
 

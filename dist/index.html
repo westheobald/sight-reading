@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sight Reading Generator</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <button class="btn btn__generate">
+      <svg class="icon icon__generate"><use xlink:href="sprites.svg#icon__generate"></use></svg>
+    </button>
+    <button id="settingsBtn" class="btn btn__settings">
+      <svg class="icon icon__settings"><use xlink:href="sprites.svg#icon__settings"></use></svg>
+    </button>
+    <div class="settings hidden">
+      <div class="settings__main">
+        <p class="tooltip">
+          Use the following settings to configure the melody generator. When you are finished, press
+          the button on the top left to generate your first melody!
+        </p>
+        <div class="setting">
+          <h3>Clef:</h3>
+          <select name="clef" id="clef">
+            <option value="treble" selected>Treble</option>
+            <option value="bass">Bass</option>
+            <option value="tenor">Tenor</option>
+            <option value="alto">Alto</option>
+          </select>
+        </div>
+        <div class="setting">
+          <h3>Key:</h3>
+          <select name="key" id="key">
+            <option value="C" selected>C Major / A Minor</option>
+            <option value="F">F Major / D Minor</option>
+            <option value="Bb">Bb Major / G Minor</option>
+            <option value="Eb">Eb Major / C Minor</option>
+            <option value="Ab">Ab Major / F Minor</option>
+            <option value="Db">Db Major / Bb Minor</option>
+            <option value="Gb">Gb Major / Eb Minor</option>
+            <option value="Cb">Cb Major / Ab Minor</option>
+          </select>
+        </div>
+        <div class="setting">
+          <h3>Time Signature:</h3>
+          <input type="number" max="12" class="setting__numerator" value="4" />
+          <p class="setting__dash">/</p>
+          <select class="setting__denominator">
+            <option value="2">2</option>
+            <option value="4" selected>4</option>
+            <option value="8">8</option>
+            <option value="16">16</option>
+          </select>
+        </div>
+      </div>
+      <div class="settings__rhythm">
+        <h3>Available Rhythms:</h3>
+        <p class="setting__error hidden">
+          Must enable sixteenth notes when using dotted eighth notes!
+        </p>
+        <div class="setting setting__rhythms">
+          <div class="setting__rhythms__note">
+            <input type="checkbox" class="rhythm" value="q" checked />Quarter Note
+          </div>
+          <div class="setting__rhythms__note">
+            <input type="checkbox" class="rhythm" value="8" checked />Eighth Note
+          </div>
+          <div class="setting__rhythms__note">
+            <input type="checkbox" class="rhythm" value="16" id="sixteenth" checked />Sixteenth Note
+          </div>
+          <div class="setting__rhythms__note">
+            <input type="checkbox" class="rhythm" value="8d" checked />Dotted Eighth
+          </div>
+        </div>
+        <div class="setting__rest">
+          <input type="checkbox" id="rest" value="none" checked />Allow rests?
+          <input type="number" id="restPercent" min="1" max="100" value="10" /> % of notes are rests
+        </div>
+      </div>
+      <div class="settings__notes">
+        <div class="setting setting__range">
+          <div>
+            <h3>Low Range:</h3>
+            <input type="range" id="lowRange" min="0" max="51" value="18" />
+            <p class="range__text--low range__text">E/3</p>
+          </div>
+          <div>
+            <h3>High Range:</h3>
+            <input type="range" id="highRange" min="0" max="51" value="39" />
+            <p class="range__text--high range__text">E/6</p>
+          </div>
+          <p class="tooltip">Choose the range of notes that the generator will pick from</p>
+        </div>
+        <div class="setting setting__skip">
+          <h3>Skip Range:</h3>
+          <input type="number" id="skipRange" min="2" max="8" value="2" />
+          <p class="tooltip">
+            Sets the interval range the generator will pick from. From 2 (seconds, stepwise motion)
+            to 8 (octaves)
+          </p>
+        </div>
+        <div class="setting setting__repeated">
+          <h3>Repeated Notes:</h3>
+          <input type="number" id="repeatedNotePercentage" min="0" max="100" value="10" />%
+          <p class="tooltip">Sets the chance a note has of being the same as the previous note</p>
+        </div>
+      </div>
+    </div>
+    <div class="settings__overlay"></div>
+    <div id="notation" class=""></div>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+// settings container and main setting sections
+.settings {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  padding-bottom: 7rem;
+
+  &__overlay {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    transition: all 0.5s;
+
+    &--transitioned {
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  // container for each section inside settings
+  & > div {
+    padding: 4rem;
+    color: white;
+    border-radius: 1rem;
+    margin: 7rem 2rem 0 2rem;
+  }
+  &__main {
+    background-color: rgb(168, 168, 168);
+    max-width: 40rem;
+  }
+  &__rhythm {
+    background-color: rgb(168, 168, 168);
+    max-width: 50rem;
+
+    & h3 {
+      margin-bottom: 3rem;
+    }
+  }
+  &__notes {
+    background-color: rgb(168, 168, 168);
+    max-width: 40rem;
+  }
+}
+// individual settings
+.setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+  & h3 {
+    display: inline-block;
+    margin-right: 2rem;
+  }
+  &__numerator {
+    width: 4rem;
+  }
+  &__dash {
+    margin: 0 1rem;
+  }
+
+  &__rhythms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    justify-content: flex-start;
+
+    &__note {
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+  }
+  &__error {
+    color: red;
+    margin-bottom: 2rem;
+  }
+  &__range div {
+    height: 5rem;
+  }
+  &__rest {
+    margin-top: 4rem;
+  }
+}
+
+.range__text {
+  position: relative;
+  top: -2.3rem;
+
+  &--high {
+    left: 23rem;
+  }
+  &--low {
+    left: 12rem;
+  }
+}
+
+#restPercent {
+  margin-left: 1rem;
+}

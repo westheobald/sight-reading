@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.tooltip {
+  text-align: justify;
+  font-size: 1.4rem;
+}
+
+#notation {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  overflow-y: hidden;
+}
+
+.settings {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+  padding-bottom: 7rem;
+}
+.settings__overlay {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  transition: all 0.5s;
+}
+.settings__overlay--transitioned {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.settings > div {
+  padding: 4rem;
+  color: white;
+  border-radius: 1rem;
+  margin: 7rem 2rem 0 2rem;
+}
+.settings__main {
+  background-color: #a8a8a8;
+  max-width: 40rem;
+}
+.settings__rhythm {
+  background-color: #a8a8a8;
+  max-width: 50rem;
+}
+.settings__rhythm h3 {
+  margin-bottom: 3rem;
+}
+.settings__notes {
+  background-color: #a8a8a8;
+  max-width: 40rem;
+}
+
+.setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 4rem 0;
+}
+.setting h3 {
+  display: inline-block;
+  margin-right: 2rem;
+}
+.setting__numerator {
+  width: 4rem;
+}
+.setting__dash {
+  margin: 0 1rem;
+}
+.setting__rhythms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+.setting__rhythms__note {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+.setting__error {
+  color: red;
+  margin-bottom: 2rem;
+}
+.setting__range div {
+  height: 5rem;
+}
+.setting__rest {
+  margin-top: 4rem;
+}
+
+.range__text {
+  position: relative;
+  top: -2.3rem;
+}
+.range__text--high {
+  left: 23rem;
+}
+.range__text--low {
+  left: 12rem;
+}
+
+#restPercent {
+  margin-left: 1rem;
+}
+
+.btn {
+  height: 5rem;
+  width: 5rem;
+  border: none;
+  position: absolute;
+  top: 0;
+  background-color: lightgray;
+  z-index: 1000;
+}
+.btn svg {
+  height: 80%;
+  width: 80%;
+  transition: all 0.5s;
+}
+.btn svg:hover {
+  transform: scale(1.2);
+}
+.btn__settings {
+  right: 0;
+  border-bottom-left-radius: 0.4rem;
+}
+.btn__generate {
+  left: 0;
+  border-bottom-right-radius: 0.4rem;
+}
+
+/*# sourceMappingURL=style.css.map */

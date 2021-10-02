@@ -1,0 +1,26 @@
+.btn {
+  height: 5rem;
+  width: 5rem;
+  border: none;
+  position: absolute;
+  top: 0;
+  background-color: rgb(211, 211, 211);
+  z-index: 1000;
+
+  & svg {
+    height: 80%;
+    width: 80%;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__settings {
+    right: 0;
+    border-bottom-left-radius: 0.4rem;
+  }
+  &__generate {
+    left: 0;
+    border-bottom-right-radius: 0.4rem;
+  }
+}
